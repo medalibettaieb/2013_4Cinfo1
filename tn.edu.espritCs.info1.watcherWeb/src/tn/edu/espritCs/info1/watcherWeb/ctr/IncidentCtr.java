@@ -7,18 +7,21 @@ import javax.faces.bean.SessionScoped;
 import tn.edu.espritCs.info1.watcher.business.interfaces.IncidentBusinessLocal;
 import tn.edu.espritCs.info1.watcher.domain.Incident;
 
-@ManagedBean(name = "incidentCtrBean")
+@ManagedBean
 @SessionScoped
 public class IncidentCtr {
-	private Incident incident = new Incident();
+	//creation of the model 
+	private Incident incident=new Incident();
+	
+	//injection of the proxy 
 	@EJB
 	private IncidentBusinessLocal incidentBusinessLocal;
-
+	
 	public String doAddIncident(){
-		
 		incidentBusinessLocal.addIncident(incident);
 		return "";
 	}
+
 	public Incident getIncident() {
 		return incident;
 	}

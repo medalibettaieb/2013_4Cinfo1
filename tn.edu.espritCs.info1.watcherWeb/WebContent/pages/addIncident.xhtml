@@ -6,17 +6,18 @@
 
 <h:head></h:head>
 <body>
-
 	<f:view>
-		<h:form>
+		<h1>Add incident</h1>
+
+		<h:form id="form1">
 			<h:panelGrid border="1" columns="2">
-				<h:outputText value="ID"></h:outputText>
-				<h:inputText value="#{incidentCtrBean.incident.idIncident}" />
-				<h:outputText value="Description"></h:outputText>
-				<h:inputText value="#{incidentCtrBean.incident.descIncident}" />
+				<h:outputText value="id incident"></h:outputText>
+				<h:inputText value="#{incidentCtr.incident.idIncident}" />
+				<h:outputText value="descpription of the incident"></h:outputText>
+				<h:inputText value="#{incidentCtr.incident.descIncident}" />
+
 			</h:panelGrid>
-			<h:commandButton action="#{incidentCtrBean.doAddIncident}"
-				value="Add" />
+			<h:commandButton value="add" action="#{incidentCtr.doAddIncident}" />
 
 		</h:form>
 
